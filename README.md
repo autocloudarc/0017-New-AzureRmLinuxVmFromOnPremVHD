@@ -7,7 +7,7 @@ REQUIREMENTS
 1. An Azure subscription. If you or your organization does not already have a subscription, start here: https://azure.microsoft.com/en-us/
 2. An on-premises hypervisor. See REFERENCES items for more information.
 
-ARGUMENTS
+ARGUMENTS <br>
 -s Existing subscription in which uploaded specialized VM will be provisioned
 . <br>
 -v Existing source path for *.vhd file that will be uploaded to Azure blob storage. <br>
@@ -23,7 +23,7 @@ Existing resource group that contains all network storage and compute resources 
 -e Exisitng Azure virtual network that contains the target subnet (-u) above. <br>
 -z New disk size in GB of managed disk for new Azure VM. <br>
 
-EXAMPLE
+EXAMPLE <br>
 New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' -v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' -r 'myResourceGroup' -l 'eastus2' -c 'containerforvhd'-m 'myVmName' -a 'MyAvilabilitySet' -t 'distro=CentOS7' -u 'MySubnetName'-e 'MyVnetName' -z 32
 
 SYNTAX    	
