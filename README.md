@@ -1,4 +1,4 @@
-## DESCRIPTION
+# DESCRIPTION
 This Linux shell script will upload a previously prepared specilized *.vhd Virtual Machine image from an on-premisses hypervisor to Azure, then deploy an Azure Linux VM from this *.vhd using commands from the Azure CLI.
 A CentOS 7 VM was used to test this script, but other Linux distros can be used as well (see REFERENCES: item 2 below).
 For instructions on how to prepare a specialized Linux VM onpremises for Azure, please see REFERENCES item 2 also.
@@ -8,12 +8,9 @@ REQUIREMENTS:
 2. An on-premises hypervisor. See REFERENCES: items for more information.
 
 ARGUMENTS:
--s Existing subscription in which uploaded specialized VM will be provisioned
-.
+-s Existing subscription in which uploaded specialized VM will be provisioned.
 -v Existing source path for *.vhd file that will be uploaded to Azure blob storage.
--r 
-Existing resource group that contains all network storage and compute resources associated with this *.vhd specialized image
-.
+-r Existing resource group that contains all network storage and compute resources associated with this *.vhd specialized image.
 -l Azure region associated with the existing resource group to which this image will be uploaded and provisioned.
 -c New Azure storage account container name that will be created by this script to host the uploaded *.vhd specialized image for the Azure VM.
 -m New Azure VM name that will be used when creating the new specialized VM in Azure.
@@ -25,12 +22,9 @@ Existing resource group that contains all network storage and compute resources 
 
 EXAMPLE:
 New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' \
-
 -v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' \
-
 -r 'myResourceGroup' \
 -l 'eastus2' \
-
 -c 'containerforvhd' \
 -m 'myVmName' \
 -a 'MyAvilabilitySet' \
