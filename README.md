@@ -5,23 +5,23 @@ For instructions on how to prepare a specialized Linux VM onpremises for Azure, 
 
 REQUIREMENTS
 1. An Azure subscription. If you or your organization does not already have a subscription, start here: https://azure.microsoft.com/en-us/
-2. An on-premises hypervisor. See REFERENCES: items for more information.
+2. An on-premises hypervisor. See REFERENCES items for more information.
 
 ARGUMENTS
 -s Existing subscription in which uploaded specialized VM will be provisioned
-. \n
--v Existing source path for *.vhd file that will be uploaded to Azure blob storage. \n
+.
+-v Existing source path for *.vhd file that will be uploaded to Azure blob storage.
 -r 
 Existing resource group that contains all network storage and compute resources associated with this *.vhd specialized image
-. \n
--l Azure region associated with the existing resource group to which this image will be uploaded and provisioned. \n
--c New Azure storage account container name that will be created by this script to host the uploaded *.vhd specialized image for the Azure VM. \n
--m New Azure VM name that will be used when creating the new specialized VM in Azure. \n
--a Existing availability set into which the new Azure VM will be placed for update and failure domain fault tolerance. \n
--t One or more new space-separated arbitrary tags for the new Azure VM that will be deployed. \n
--u Existing Azure subnet into which the new Azure VM will be deployed. \n
--e Exisitng Azure virtual network that contains the target subnet (-u) above. \n
--z New disk size in GB of managed disk for new Azure VM. \n
+.
+-l Azure region associated with the existing resource group to which this image will be uploaded and provisioned.
+-c New Azure storage account container name that will be created by this script to host the uploaded *.vhd specialized image for the Azure VM.
+-m New Azure VM name that will be used when creating the new specialized VM in Azure.
+-a Existing availability set into which the new Azure VM will be placed for update and failure domain fault tolerance.
+-t One or more new space-separated arbitrary tags for the new Azure VM that will be deployed.
+-u Existing Azure subnet into which the new Azure VM will be deployed.
+-e Exisitng Azure virtual network that contains the target subnet (-u) above.
+-z New disk size in GB of managed disk for new Azure VM.
 
 EXAMPLE
 New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' -v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' -r 'myResourceGroup' -l 'eastus2' -c 'containerforvhd'-m 'myVmName' -a 'MyAvilabilitySet' -t 'distro=CentOS7' -u 'MySubnetName'-e 'MyVnetName' -z 32
