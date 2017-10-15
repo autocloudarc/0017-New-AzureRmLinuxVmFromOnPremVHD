@@ -9,19 +9,19 @@ REQUIREMENTS
 
 ARGUMENTS
 -s Existing subscription in which uploaded specialized VM will be provisioned
-.
--v Existing source path for *.vhd file that will be uploaded to Azure blob storage.
+. <br>
+-v Existing source path for *.vhd file that will be uploaded to Azure blob storage. <br>
 -r 
 Existing resource group that contains all network storage and compute resources associated with this *.vhd specialized image
-.
--l Azure region associated with the existing resource group to which this image will be uploaded and provisioned.
--c New Azure storage account container name that will be created by this script to host the uploaded *.vhd specialized image for the Azure VM.
--m New Azure VM name that will be used when creating the new specialized VM in Azure.
--a Existing availability set into which the new Azure VM will be placed for update and failure domain fault tolerance.
--t One or more new space-separated arbitrary tags for the new Azure VM that will be deployed.
--u Existing Azure subnet into which the new Azure VM will be deployed.
--e Exisitng Azure virtual network that contains the target subnet (-u) above.
--z New disk size in GB of managed disk for new Azure VM.
+. <br>
+-l Azure region associated with the existing resource group to which this image will be uploaded and provisioned. <br>
+-c New Azure storage account container name that will be created by this script to host the uploaded *.vhd specialized image for the Azure VM. <br>
+-m New Azure VM name that will be used when creating the new specialized VM in Azure. <br>
+-a Existing availability set into which the new Azure VM will be placed for update and failure domain fault tolerance. <br>
+-t One or more new space-separated arbitrary tags for the new Azure VM that will be deployed. <br>
+-u Existing Azure subnet into which the new Azure VM will be deployed. <br>
+-e Exisitng Azure virtual network that contains the target subnet (-u) above. <br>
+-z New disk size in GB of managed disk for new Azure VM. <br>
 
 EXAMPLE
 New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' -v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' -r 'myResourceGroup' -l 'eastus2' -c 'containerforvhd'-m 'myVmName' -a 'MyAvilabilitySet' -t 'distro=CentOS7' -u 'MySubnetName'-e 'MyVnetName' -z 32
