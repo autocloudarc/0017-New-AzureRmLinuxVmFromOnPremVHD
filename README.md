@@ -25,23 +25,22 @@ Existing resource group that contains all network storage and compute resources 
 
 EXAMPLE:
 New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' \
+\
+-v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' \\
 
--v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' \
-
--r 'myResourceGroup' \
--l 'eastus2' \
-
--c 'containerforvhd' \
--m 'myVmName' \
--a 'MyAvilabilitySet' \
--t 'distro=CentOS7' \
--u 'MySubnetName' \
--e 'MyVnetName' \
+-r 'myResourceGroup' \\
+-l 'eastus2' \\
+-c 'containerforvhd' \\
+-m 'myVmName' \\
+-a 'MyAvilabilitySet' \\
+-t 'distro=CentOS7' \\
+-u 'MySubnetName' \\
+-e 'MyVnetName' \\
 -z 32
 
 SYNTAX:      	
-New-AzureRmLinuxVmFromOnPremVHD.sh -s <subscription> -v <vhdSource> -r <resourceGroup> -l <location> -c <container> -m <machineName> -a <avSet> 
--t <tag> -u <subnetName> -e <vNetName> -z <diskSizeGB>
+New-AzureRmLinuxVmFromOnPremVHD.sh -s \<subscription> -v \<vhdSource> -r \<resourceGroup> -l \<location> -c \<container> -m \<machineName> -a \<avSet> 
+-t \<tag> -u \<subnetName> -e \<vNetName> -z \<diskSizeGB>
 
 REFERENCES:
 1. https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-centos
