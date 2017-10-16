@@ -85,7 +85,7 @@ Feel free to ask questions, provide feedback, contribute, file issues, etc. so w
 HEADER
 
 # Evaluate the arguments provided
-while getopts s:v:r:l:c:m:a:t:d:u:e:z option
+while getopts s:v:r:l:c:m:a:t:d:u:e:z: option
 do
     case "${option}"
 	in
@@ -149,7 +149,7 @@ echo "diskSizeGB=${diskSizeGB}"
 echo
 
 # Authenticate to subscription
-# az login
+az login
 
 # Select subscription
 echo "Selecting subscription ${sub}"
@@ -166,20 +166,19 @@ k1="$(az storage account keys list --resource-group $resourceGroup \
 blobUrl="https://$sa.blob.core.windows.net/$container/$blobName"
 
 # Create new storage container
-# az storage container create --account-name $sa \
-# --name $container
+az storage container create --account-name $sa \
+--name $container
 
 # Upload customized *.vhd from on premisses local or shared file system, to Azure blob storage to stage for deployment
-# az storage blob upload --account-name $sa \
-# --account-key $k1 \
-# --container-name $container \
-# --type $blobType \
-# --file $vhdSource \
-# --name $blobName
+az storage blob upload --account-name $sa \
+--account-key $k1 \
+--container-name $container \
+--type $blobType \
+--file $vhdSource \
+--name $blobName
 
 # Create a managed disk from the uploaded VHD as the source.
-az disk create \
---resource-group $resourceGroup \
+az disk create --resource-group $resourceGroup \
 --name $managedDiskName \
 --location $location \
 --size-gb $diskSizeGB \
