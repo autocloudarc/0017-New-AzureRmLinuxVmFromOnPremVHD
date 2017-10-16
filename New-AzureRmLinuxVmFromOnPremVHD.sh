@@ -186,7 +186,7 @@ az disk create --resource-group $resourceGroup \
 --source $blobUrl
 
 # Create a public IP address resource
-az network public-ip create --resource-group $resourceGroup --name $vmPip
+az network public-ip create --resource-group $resourceGroup --name $vmPip --allocation-method Static
 
 # Create a network interface and associate with public ip addres $vmPip
 az network nic create --resource-group $resourceGroup --vnet-name $vNetName --subnet $subnetName --name $vmNic --public-ip-address $vmPip
