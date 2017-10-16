@@ -182,7 +182,7 @@ az disk create \
 --resource-group $resourceGroup \
 --name $managedDiskName \
 --location $location \
---size-gb $diskSize \
+--size-gb $diskSizeGB \
 --sku $storageSku \
 --source $blobUrl
 
