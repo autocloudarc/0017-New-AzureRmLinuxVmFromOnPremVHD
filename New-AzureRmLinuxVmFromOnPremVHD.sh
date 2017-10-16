@@ -149,7 +149,7 @@ echo "diskSizeGB=${diskSizeGB}"
 echo
 
 # Authenticate to subscription
-az login
+# az login
 
 # Select subscription
 echo "Selecting subscription ${sub}"
@@ -166,16 +166,16 @@ k1="$(az storage account keys list --resource-group $resourceGroup \
 blobUrl="https://$sa.blob.core.windows.net/$container/$blobName"
 
 # Create new storage container
-az storage container create --account-name $sa \
---name $container
+# az storage container create --account-name $sa \
+# --name $container
 
 # Upload customized *.vhd from on premisses local or shared file system, to Azure blob storage to stage for deployment
-az storage blob upload --account-name $sa \
---account-key $k1 \
---container-name $container \
---type $blobType \
---file $vhdSource \
---name $blobName
+# az storage blob upload --account-name $sa \
+# --account-key $k1 \
+# --container-name $container \
+# --type $blobType \
+# --file $vhdSource \
+# --name $blobName
 
 # Create a managed disk from the uploaded VHD as the source.
 az disk create \
@@ -187,7 +187,7 @@ az disk create \
 --source $blobUrl
 
 # Create a public IP address resource
-az network public-ip create --resource-group --name $vmPip
+az network public-ip create --resource-group $resourceGroup --name $vmPip
 
 # Create a network interface and associate with public ip addres $vmPip
 az network nic create --resource-group $resourceGroup --vnet-name $vNetName --subnet $subnetName --name $vmNic --public-ip-address $vmPip
