@@ -24,7 +24,8 @@ Existing resource group that contains all network storage and compute resources 
 -z New disk size in GB of managed disk for new Azure VM. <br>
 
 EXAMPLE <br>
-New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' -v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' -r 'myResourceGroup' -l 'eastus2' -c 'containerforvhd'-m 'myVmName' -a 'MyAvilabilitySet' -t 'distro=CentOS7' -u 'MySubnetName'-e 'MyVnetName' -z 32
+New-AzureRmLinuxVmFromOnPremVHD.sh -s 'MySubscription' -v '/mnt/d/vhd/MyOnPremVmImageForAzure.vhd' -r 'myResourceGroup' -l 'eastus2' -c 'containerforvhd'-m 'myVmName' -a 'MyAvilabilitySet' -t 'distro=CentOS7' -u 'MySubnetName' -e 
+'MyVnetName' -z 32
 
 SYNTAX    	
 New-AzureRmLinuxVmFromOnPremVHD.sh -s subscription -v vhdSource -r resourceGroup -l location -c container -m machineName -a avSet 
