@@ -79,6 +79,7 @@ REFERENCES:
 3. https://docs.microsoft.com/en-us/azure/virtual-machines/linux/upload-vhd
 4. https://github.com/paulomarquesc/AzureCLI2.0BashDeployment/blob/master/azuredeploy.sh
 5. https://blogs.msdn.microsoft.com/wsl/2017/04/18/file-system-improvements-to-the-windows-subsystem-for-linux/
+6. https://stackoverflow.com/questions/5230798/r-character-in-shell-script '\r': command not found. Use dos2unix <script>.sh
 
 **FEEDBACK**
 Feel free to ask questions, provide feedback, contribute, file issues, etc. so we can make this even better!
